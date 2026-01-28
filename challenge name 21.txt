@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, digit;
+    int decimal = 0;
+    int base = 1;   // 2^0
+    int temp;
+
+    scanf("%d", &n);
+    temp = n;
+
+    for (; temp > 0; temp = temp / 10) {
+        digit = temp % 10;
+        decimal = decimal + (digit * base);
+        base = base * 2;
+    }
+
+    printf("%d", decimal);
+
+    return 0;
+}
